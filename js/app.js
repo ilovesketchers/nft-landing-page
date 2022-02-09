@@ -1,6 +1,6 @@
 // METAMASK CONNECTION
 const TIMEOUT = 1000;
-const COLLECTION_NAME = 'CodeCats';
+const COLLECTION_NAME = 'the uglies';
 let editions = [];
 let dots = 1;
 
@@ -11,9 +11,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const updateButton = async () => {
     if (!MetaMaskOnboarding.isMetaMaskInstalled()) {
-      onboardButton.innerText = 'Install MetaMask!';
+      onboardButton.innerText = 'install MetaMask!';
       onboardButton.onclick = () => {
-        onboardButton.innerText = 'Connecting...';
+        onboardButton.innerText = 'connecting...';
         onboardButton.disabled = true;
         onboarding.startOnboarding();
       };
@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
       onboarding.stopOnboarding();
       checkOwner(accounts[0]);
     } else {
-      onboardButton.innerText = 'Click To Connect your wallet!';
+      onboardButton.innerText = 'connect your wallet!';
       onboardButton.onclick = async () => {
         await window.ethereum.request({
           method: 'eth_requestAccounts',
